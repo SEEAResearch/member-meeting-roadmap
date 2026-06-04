@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)file:///C:/Users/WilliamBryan/Downloads/roadmap_1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EE Initiative Roadmap 2026–2027</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&display=swap');
+
+:root {
+  --bg: #f2ede4; --paper: #faf8f3; --ink: #1c1712; --ink-muted: #7a6e61; --rule: #ddd5c4;
+  --sy: #f7e14e; --sy-s: #c8b610; --sg: #9fe06a; --sg-s: #6ab830;
+  --sb: #6dc4ef; --sb-s: #2e8ec4; --sp: #f560a0; --sp-s: #c0245e; --so: #f5a428; --so-s: #c07010;
+  --q1c: #e8d5b0; --q2c: #d4e8c8; --q3c: #c8d8f0; --q4c: #f0d8e8; --q5c: #e8e0c8; --q6c: #d8e8e0;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Mono', monospace; background: var(--bg); color: var(--ink); min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ── HEADER ── */
+.site-header { background: var(--ink); color: var(--paper); padding: 1.1rem 2rem; display: flex; align-items: center; gap: 1.5rem; position: sticky; top: 0; z-index: 200; flex-shrink: 0; }
+.site-header h1 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 600; letter-spacing: -0.02em; }
+.site-header .sub { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.5; }
+.last-updated { margin-left: auto; font-size: 0.58rem; opacity: 0.4; text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* ── TABS ── */
+.tab-bar { background: var(--paper); border-bottom: 2px solid var(--ink); display: flex; align-items: stretch; padding: 0 2rem; flex-shrink: 0; }
+.tab-btn { font-family: 'DM Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.75rem 1.25rem; border: none; background: transparent; cursor: pointer; color: var(--ink-muted); border-bottom: 3px solid transparent; margin-bottom: -2px; transition: color 0.12s, border-color 0.12s; display: flex; align-items: center; gap: 0.5rem; }
+.tab-btn:hover { color: var(--ink); }
+.tab-btn.active { color: var(--ink); border-bottom-color: var(--ink); font-weight: 500; }
+.tab-divider { width: 1px; background: var(--rule); margin: 0.5rem; }
+.tab-panel { display: none; flex: 1; flex-direction: column; min-height: 0; overflow: hidden; }
+.tab-panel.active { display: flex; }
+
+/* ══ TAB 1: BOARD ══ */
+.toolbar { background: var(--paper); border-bottom: 1px solid var(--rule); padding: 0.55rem 2rem; display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; flex-shrink: 0; }
+.toolbar-section { display: flex; align-items: center; gap: 0.4rem; }
+.toolbar-label { font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-muted); white-space: nowrap; }
+.chip { font-family: 'DM Mono', monospace; font-size: 0.6rem; padding: 0.22rem 0.65rem; border: 1.5px solid var(--ink); background: transparent; cursor: pointer; letter-spacing: 0.04em; transition: background 0.1s, color 0.1s; white-space: nowrap; }
+.chip:hover, .chip.active { background: var(--ink); color: var(--paper); }
+.chip.sh-chip { border-color: var(--sc); color: var(--sc); }
+.chip.sh-chip:hover, .chip.sh-chip.active { background: var(--sc); color: #fff; }
+.tdiv { width: 1px; height: 18px; background: var(--rule); }
+
+.board-wrap { display: flex; flex: 1; overflow: hidden; min-height: 0; }
+.timeline-scroll { flex: 1; overflow: auto; padding: 1.5rem 2rem 3rem; }
+.timeline { display: grid; grid-template-columns: 175px repeat(6, minmax(170px, 1fr)); border: 2px solid var(--ink); background: var(--paper); box-shadow: 5px 5px 0 var(--ink); min-width: 1200px; }
+.corner { background: var(--ink); border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); display: flex; align-items: center; justify-content: center; padding: 0.6rem; }
+.corner span { font-size: 0.52rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--bg); }
+.qh { padding: 0.6rem 0.75rem; border-bottom: 2px solid var(--ink); border-right: 1px solid var(--rule); text-align: center; }
+.qh:last-child { border-right: none; }
+.qh .ql { font-size: 0.52rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-muted); display: block; }
+.qh .qn { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; }
+.qh.q1{background:var(--q1c)}.qh.q2{background:var(--q2c)}.qh.q3{background:var(--q3c)}.qh.q4{background:var(--q4c)}.qh.q5{background:var(--q5c)}.qh.q6{background:var(--q6c)}
+.row-label { padding: 1rem 0.75rem; border-right: 2px solid var(--ink); border-bottom: 1px solid var(--rule); background: var(--paper); position: sticky; left: 0; z-index: 10; display: flex; flex-direction: column; gap: 0.35rem; }
+.row-label:last-of-type { border-bottom: none; }
+.row-label h3 { font-family: 'Fraunces', serif; font-size: 0.85rem; font-weight: 600; line-height: 1.25; }
+.owner-tag { font-size: 0.52rem; text-transform: uppercase; letter-spacing: 0.08em; background: var(--sy); border: 1px solid var(--sy-s); display: inline-block; padding: 0.1rem 0.35rem; color: var(--ink); }
+.cell { padding: 0.7rem 0.6rem; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); min-height: 120px; display: flex; flex-direction: column; gap: 0.45rem; position: relative; }
+.cell:last-child { border-right: none; }
+.cell.last-row { border-bottom: none; }
+
+.sticky { padding: 0.45rem 0.55rem; font-size: 0.62rem; line-height: 1.45; position: relative; cursor: pointer; transition: transform 0.12s, box-shadow 0.12s, opacity 0.2s; word-break: break-word; border-radius: 1px; }
+.sticky:hover { transform: scale(1.04) translateY(-2px) rotate(0deg) !important; z-index: 20; }
+.sticky.y{background:var(--sy);border-bottom:3px solid var(--sy-s);box-shadow:2px 2px 0 var(--sy-s);transform:rotate(-1.2deg)}
+.sticky.g{background:var(--sg);border-bottom:3px solid var(--sg-s);box-shadow:2px 2px 0 var(--sg-s);transform:rotate(0.9deg)}
+.sticky.b{background:var(--sb);border-bottom:3px solid var(--sb-s);box-shadow:2px 2px 0 var(--sb-s);transform:rotate(-0.6deg)}
+.sticky.p{background:var(--sp);border-bottom:3px solid var(--sp-s);box-shadow:2px 2px 0 var(--sp-s);transform:rotate(1deg);color:#fff}
+.sticky.o{background:var(--so);border-bottom:3px solid var(--so-s);box-shadow:2px 2px 0 var(--so-s);transform:rotate(-0.4deg)}
+.sticky strong { display: block; font-size: 0.66rem; font-weight: 500; margin-bottom: 0.2rem; }
+.sticky ul { padding-left: 0.8rem; margin-top: 0.15rem; }
+.sticky ul li { margin-bottom: 0.1rem; }
+.s-dots { display: flex; gap: 3px; margin-top: 0.35rem; flex-wrap: wrap; }
+.s-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; cursor: pointer; }
+
+/* side panel */
+.side-panel { width: 0; overflow: hidden; transition: width 0.22s ease; background: var(--paper); border-left: 2px solid var(--ink); display: flex; flex-direction: column; flex-shrink: 0; }
+.side-panel.open { width: 300px; }
+.panel-header { padding: 1rem; border-bottom: 1.5px solid var(--ink); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+.panel-header h2 { font-family: 'Fraunces', serif; font-size: 0.95rem; font-weight: 600; }
+.panel-close { background: none; border: 1.5px solid var(--ink); width: 24px; height: 24px; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; }
+.panel-close:hover { background: var(--ink); color: var(--paper); }
+.panel-body { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.9rem; }
+.panel-meta { font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-muted); }
+.panel-title { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; line-height: 1.3; margin: 0.2rem 0 0.4rem; }
+.panel-section { margin-top: 0.5rem; }
+.panel-section-label { font-size: 0.56rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-muted); border-bottom: 1px solid var(--rule); padding-bottom: 0.28rem; margin-bottom: 0.45rem; }
+.panel-text { font-size: 0.7rem; line-height: 1.6; }
+.panel-text ul { padding-left: 1rem; margin-top: 0.2rem; }
+.panel-text li { margin-bottom: 0.12rem; }
+.sh-list { display: flex; flex-direction: column; gap: 0.35rem; }
+.sh-row { display: flex; align-items: center; gap: 0.5rem; font-size: 0.66rem; padding: 0.3rem 0.5rem; border-left: 3px solid var(--shc); border-radius: 0; }
+.sh-row .sh-name { font-weight: 500; }
+.sh-row .sh-full { font-size: 0.58rem; color: var(--ink-muted); }
+
+/* ══ TAB 2: STAKEHOLDER MAP ══ */
+.smap-outer { flex: 1; overflow: auto; padding: 2rem; display: flex; flex-direction: column; gap: 2rem; }
+.smap-intro { font-size: 0.72rem; color: var(--ink-muted); line-height: 1.6; max-width: 700px; }
+
+/* network diagram */
+.network-wrap { background: var(--paper); border: 2px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); display: grid; grid-template-columns: 220px 1fr; min-height: 360px; }
+.net-left { border-right: 1.5px solid var(--ink); padding: 1.25rem 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.net-left-label { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-muted); margin-bottom: 0.25rem; }
+.net-orb { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.6rem; border: 1.5px solid transparent; cursor: pointer; transition: border-color 0.12s, background 0.12s; border-radius: 2px; }
+.net-orb:hover { background: var(--bg); }
+.net-orb.selected { border-color: var(--oc); background: var(--olight); }
+.net-orb.dimmed { opacity: 0.3; }
+.orb-avatar { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.58rem; font-weight: 500; flex-shrink: 0; border: 1.5px solid var(--oc); background: var(--olight); color: var(--otxt); }
+.orb-label { font-size: 0.68rem; font-weight: 500; flex: 1; }
+.orb-count { font-size: 0.55rem; color: var(--ink-muted); }
+.net-add-btn { margin-top: auto; font-family: 'DM Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.5rem; border: 1.5px dashed var(--ink-muted); background: transparent; cursor: pointer; color: var(--ink-muted); transition: border-color 0.1s, color 0.1s; }
+.net-add-btn:hover { border-color: var(--ink); color: var(--ink); }
+
+.net-right { padding: 1.25rem 1.25rem 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.net-right-label { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-muted); }
+.net-ws-list { display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+.net-ws-row { padding: 0.6rem 0.75rem; border: 1.5px solid var(--rule); background: var(--bg); transition: border-color 0.15s, background 0.15s; }
+.net-ws-row.lit { border-color: var(--litc); background: var(--paper); }
+.net-ws-top { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem; }
+.net-ws-name { font-family: 'Fraunces', serif; font-size: 0.82rem; font-weight: 600; flex: 1; }
+.net-ws-dots { display: flex; gap: 3px; }
+.net-ws-dot { width: 8px; height: 8px; border-radius: 50%; opacity: 0.18; transition: opacity 0.2s; }
+.net-ws-dot.on { opacity: 1; }
+.net-bar-bg { height: 2px; background: var(--rule); }
+.net-bar-fill { height: 2px; width: 0; transition: width 0.3s; }
+.net-task-pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 0.4rem; overflow: hidden; max-height: 0; transition: max-height 0.25s; }
+.net-task-pills.open { max-height: 80px; }
+.net-task-pill { font-size: 0.55rem; padding: 0.1rem 0.4rem; border: 1px solid var(--rule); color: var(--ink-muted); }
+.net-hint { font-size: 0.65rem; color: var(--ink-muted); font-style: italic; }
+.net-actions { display: flex; gap: 0.5rem; margin-top: 0.25rem; }
+.net-action { font-family: 'DM Mono', monospace; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.35rem 0.75rem; border: 1.5px solid var(--ink); background: transparent; cursor: pointer; transition: background 0.1s; }
+.net-action:hover { background: var(--bg); }
+.net-action.primary { background: var(--ink); color: var(--paper); }
+.net-action.primary:hover { opacity: 0.85; background: var(--ink); }
+
+/* org cards */
+.cards-label { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-muted); }
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.org-card { background: var(--paper); border: 1.5px solid var(--ink); padding: 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.org-card-head { display: flex; align-items: center; gap: 0.65rem; }
+.org-avatar { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 500; flex-shrink: 0; }
+.org-name { font-family: 'Fraunces', serif; font-size: 0.95rem; font-weight: 600; }
+.org-full { font-size: 0.58rem; color: var(--ink-muted); }
+.org-task-count { margin-left: auto; font-size: 0.55rem; padding: 0.1rem 0.4rem; border: 1px solid var(--rule); color: var(--ink-muted); }
+.org-divider { height: 1px; background: var(--rule); }
+.org-ws-row { display: flex; align-items: center; gap: 0.4rem; font-size: 0.6rem; }
+.org-ws-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.org-ws-name { color: var(--ink-muted); flex: 1; }
+.org-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 0.15rem; }
+.org-chip { font-size: 0.52rem; padding: 0.08rem 0.35rem; border: 1px solid var(--rule); color: var(--ink-muted); cursor: pointer; transition: border-color 0.1s; }
+.org-chip:hover { border-color: var(--ink); color: var(--ink); }
+.org-edit-btn { font-family: 'DM Mono', monospace; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.3rem 0.5rem; border: 1px solid var(--rule); background: transparent; cursor: pointer; color: var(--ink-muted); margin-top: auto; }
+.org-edit-btn:hover { border-color: var(--ink); color: var(--ink); }
+
+/* modal */
+.modal-bg { display: none; position: fixed; inset: 0; background: rgba(28,23,18,0.55); z-index: 500; align-items: center; justify-content: center; }
+.modal-bg.open { display: flex; }
+.modal { background: var(--paper); border: 2px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); padding: 1.75rem; width: 480px; max-width: 95vw; max-height: 85vh; overflow-y: auto; position: relative; }
+.modal h2 { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 1.25rem; }
+.modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: 1.5px solid var(--ink); width: 26px; height: 26px; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; }
+.modal-close:hover { background: var(--ink); color: var(--paper); }
+.form-group { margin-bottom: 1rem; }
+.form-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-muted); display: block; margin-bottom: 0.35rem; }
+.form-input { font-family: 'DM Mono', monospace; font-size: 0.72rem; width: 100%; padding: 0.5rem 0.65rem; border: 1.5px solid var(--ink); background: var(--paper); color: var(--ink); }
+.form-input:focus { outline: none; border-color: var(--ink); }
+.color-swatches { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.color-swatch { width: 26px; height: 26px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: border-color 0.1s; }
+.color-swatch.picked { border-color: var(--ink); }
+.ws-checks { display: flex; flex-direction: column; gap: 0.5rem; }
+.ws-check-row { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.68rem; }
+.ws-check-row input[type=checkbox] { margin-top: 2px; flex-shrink: 0; }
+.ws-check-label { flex: 1; }
+.ws-tasks-input { font-family: 'DM Mono', monospace; font-size: 0.62rem; width: 100%; padding: 0.3rem 0.5rem; border: 1px solid var(--rule); background: var(--bg); color: var(--ink-muted); margin-top: 0.25rem; resize: none; height: 38px; }
+.form-actions { display: flex; gap: 0.5rem; margin-top: 1.5rem; }
+.form-btn { font-family: 'DM Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.5rem 1rem; border: 1.5px solid var(--ink); cursor: pointer; flex: 1; }
+.form-btn.primary { background: var(--ink); color: var(--paper); }
+.form-btn:hover:not(.primary) { background: var(--bg); }
+.sync-status { font-size: 0.58rem; color: var(--ink-muted); text-align: center; margin-top: 0.75rem; }
+.sync-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--ink-muted); margin-right: 4px; vertical-align: middle; }
+.sync-dot.ok { background: #10b981; }
+.sync-dot.err { background: #ef4444; }
+.sync-dot.loading { background: #f59e0b; }
+.sheets-setup { background: var(--bg); border: 1px solid var(--rule); padding: 0.75rem 1rem; font-size: 0.65rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 1rem; }
+.sheets-setup a { color: var(--ink); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div>
+    <div class="sub">Strategic Roadmap</div>
+    <h1>Energy Efficiency Initiative — 2026–2027</h1>
+  </div>
+  <span class="last-updated">Last updated: <span id="last-updated-date">Jun 3, 2026</span></span>
+</header>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab(&#39;board&#39;,this)">◫ Roadmap board</button>
+  <div class="tab-divider"></div>
+  <button class="tab-btn" onclick="switchTab(&#39;stakeholders&#39;,this)">◎ Stakeholder map</button>
+</div>
+
+<!-- ══════════ TAB 1: BOARD ══════════ -->
+<div class="tab-panel active" id="panel-board">
+<div class="toolbar">
+  <div class="toolbar-section">
+    <span class="toolbar-label">Workstream</span>
+    <button class="chip active" onclick="filterWS(&#39;all&#39;,this)">All</button>
+    <button class="chip" onclick="filterWS(&#39;workforce&#39;,this)">Workforce</button>
+    <button class="chip" onclick="filterWS(&#39;trm&#39;,this)">TRM</button>
+    <button class="chip" onclick="filterWS(&#39;shared&#39;,this)">Shared Educ.</button>
+    <button class="chip" onclick="filterWS(&#39;dsm&#39;,this)">DSM + Hyper</button>
+    <button class="chip" onclick="filterWS(&#39;value&#39;,this)">Value DSM</button>
+  </div>
+  <div class="tdiv"></div>
+  <div class="toolbar-section" id="sh-filter-chips">
+    <span class="toolbar-label">Stakeholder</span>
+  <button class="chip sh-chip" style="--sc: #6366f1;">SEEA</button><button class="chip sh-chip" style="--sc: #ec4899;">ICF</button><button class="chip sh-chip" style="--sc: #f59e0b;">ACEEE</button><button class="chip sh-chip" style="--sc: #10b981;">GPC</button><button class="chip sh-chip" style="--sc: #3b82f6;">Utility</button><button class="chip sh-chip" style="--sc: #8b5cf6;">NRDC</button></div>
+</div>
+
+<div class="board-wrap">
+<div class="timeline-scroll">
+<div class="timeline" id="timeline">
+
+  <div class="corner"><span>Workstream</span></div>
+  <div class="qh q1"><span class="ql">Quarter</span><span class="qn">Q3 '26</span></div>
+  <div class="qh q2"><span class="ql">Quarter</span><span class="qn">Q4 '26</span></div>
+  <div class="qh q3"><span class="ql">Quarter</span><span class="qn">Q1 '27</span></div>
+  <div class="qh q4"><span class="ql">Quarter</span><span class="qn">Q2 '27</span></div>
+  <div class="qh q5"><span class="ql">Quarter</span><span class="qn">Q3 '27</span></div>
+  <div class="qh q6"><span class="ql">Quarter</span><span class="qn">Q4 '27</span></div>
+
+  <!-- WORKFORCE -->
+  <div class="row-label" data-ws="workforce" style="opacity: 1;"><h3>Workforce Pathways</h3></div>
+  <div class="cell" data-ws="workforce" style="opacity: 1;">
+    <div class="sticky y" data-id="wf1" data-ws="workforce" data-sh="utility seea" data-title="Identify who &quot;owns it&quot;" data-body="Determine ownership and accountability for the workforce pathways initiative." onclick="openTask(this)" style="opacity: 1;">Identify who "owns it"<div class="s-dots"><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div></div></div>
+    <div class="sticky y" data-id="wf2" data-ws="workforce" data-sh="utility" data-title="Establish motivation for the work" data-body="Establish the motivation for the work. Key owner: Utility. Sets the foundation for stakeholder buy-in." onclick="openTask(this)" style="opacity: 1;">Establish motivation for the work<div class="s-dots"><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+    <div class="sticky y" data-id="wf3" data-ws="workforce" data-sh="seea utility" data-title="Define challenges" data-body="Define and document key challenges facing workforce pathways in the EE space." onclick="openTask(this)" style="opacity: 1;">Define challenges<div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+    <div class="sticky y" data-id="wf4" data-ws="workforce" data-sh="seea" data-title="Discovery" data-body="Discovery phase — research and exploration of the workforce landscape, stakeholder context, and existing models." onclick="openTask(this)" style="opacity: 1;">Discovery<div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div></div></div>
+  </div>
+  <div class="cell" data-ws="workforce" style="opacity: 1;">
+    <div class="sticky y" data-id="wf5" data-ws="workforce" data-sh="seea utility" data-title="Identify &amp; engage stakeholders &amp; partners" data-body="Identify and engage framework stakeholders and partners." onclick="openTask(this)" style="opacity: 1;">Identify &amp; engage stakeholders &amp; partners<div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+    <div class="sticky y" data-id="wf6" data-ws="workforce" data-sh="utility" data-title="Identify funding / budget" data-body="Identify funding sources and establish budget. Owner: Utility." onclick="openTask(this)" style="opacity: 1;">Identify funding / budget<div class="s-dots"><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+  </div>
+  <div class="cell" data-ws="workforce" style="opacity: 1;">
+    <div class="sticky y" data-id="wf7" data-ws="workforce" data-sh="seea utility" data-title="Define the win–win" data-body="Articulate the mutual benefit proposition for all parties involved." onclick="openTask(this)" style="opacity: 1;">Define the win–win<div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+    <div class="sticky y" data-id="wf8" data-ws="workforce" data-sh="seea utility icf" data-title="Design the pilot" data-body="Design the pilot including milestones, time frame, tools, and team. Timeline: Q1–Q3 &#39;27." onclick="openTask(this)" style="opacity: 1;">Design the pilot (milestones, time frame, tools, team)<div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div><div class="s-dot" title="ICF" style="background: rgb(236, 72, 153);"></div></div></div>
+  </div>
+  <div class="cell" data-ws="workforce" style="opacity: 1;"></div><div class="cell" data-ws="workforce" style="opacity: 1;"></div><div class="cell last-row" data-ws="workforce" style="opacity: 1;"></div>
+
+  <!-- TRM -->
+  <div class="row-label" data-ws="trm" style="opacity: 1;"><h3>TRM</h3><span class="owner-tag">John Silky</span></div>
+  <div class="cell" data-ws="trm" style="opacity: 1;">
+    <div class="sticky g" data-id="trm1" data-ws="trm" data-sh="seea utility" data-title="TRM Q3 &#39;26 — Setup steps" data-body="Key steps:
+• Establish mission statement
+• Stakeholder identification
+• Develop tool
+• Identify early funding partners" onclick="openTask(this)" style="opacity: 1;"><ul><li>Establish mission statement</li><li>Stakeholder identification</li><li>Develop tool</li><li>Identify early funding partners</li></ul><div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+    <div class="sticky g" data-id="trm2" data-ws="trm" data-sh="seea utility" data-title="Who? — SEEA + municipalities" data-body="Key participants:
+• SEEA + municipalities
+• IC:RI
+• Utility early adopters
+• Contractors" onclick="openTask(this)" style="opacity: 1;"><strong>Who? — SEEA + muni</strong>IC:RI · Utility early adopters · Contractors<div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+  </div>
+  <div class="cell" data-ws="trm" style="opacity: 1;"></div>
+  <div class="cell" data-ws="trm" style="opacity: 1;">
+    <div class="sticky y" data-id="trm3" data-ws="trm" data-sh="seea utility" data-title="Identify power dynamics" data-body="Identify power dynamics in stakeholder setting (ongoing → on EE)." onclick="openTask(this)" style="opacity: 1;">Identify power dynamics in stakeholder setting<div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+    <div class="sticky y" data-id="trm4" data-ws="trm" data-sh="seea utility" data-title="Define value to stakeholders" data-body="Define the value proposition to stakeholders. Articulate what each party gains from participating in TRM." onclick="openTask(this)" style="opacity: 1;">Define value to stakeholders<div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+  </div>
+  <div class="cell" data-ws="trm" style="opacity: 1;"></div>
+  <div class="cell" data-ws="trm" style="opacity: 1;">
+    <div class="sticky g" data-id="trm5" data-ws="trm" data-sh="seea utility icf" data-title="TRM Q3 &#39;27 — Test &amp; validate" data-body="Steps:
+• Test / validate assumptions
+• Clarify mission / objective
+• Funding secured through early adopters (continues)" onclick="openTask(this)" style="opacity: 1;"><ul><li>Test / validate assumptions</li><li>Clarify mission / objective</li><li>Funding secured through early adopters</li></ul><div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div><div class="s-dot" title="ICF" style="background: rgb(236, 72, 153);"></div></div></div>
+    <div class="sticky g" data-id="trm6" data-ws="trm" data-sh="seea icf" data-title="Develop SOW / specifications (Start)" data-body="Develop scope of work and technical specifications. Formal contracting phase begins." onclick="openTask(this)" style="opacity: 1;">Develop SOW / specifications <strong>(Start)</strong><div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="ICF" style="background: rgb(236, 72, 153);"></div></div></div>
+  </div>
+  <div class="cell last-row" data-ws="trm" style="opacity: 1;">
+    <div class="sticky o" data-id="trm7" data-ws="trm" data-sh="seea utility" data-title="Contract / communicate" data-body="Contract awarded. Communicate outcomes broadly. Q4 &#39;27 deliverable." onclick="openTask(this)" style="opacity: 1;">Contract / communicate<div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+    <div class="sticky o" data-id="trm8" data-ws="trm" data-sh="seea utility" data-title="Identify first follower" data-body="Identify first follower (on-going). A first follower legitimizes the initiative." onclick="openTask(this)" style="opacity: 1;">Identify first follower (on-going)<div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+    <div class="sticky o" data-id="trm9" data-ws="trm" data-sh="seea utility icf" data-title="Recruit &amp; engage early adopters + award contract" data-body="Identify, recruit, and engage early adopters. Award contract." onclick="openTask(this)" style="opacity: 1;">Recruit &amp; engage early adopters · Award contract<div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div><div class="s-dot" title="ICF" style="background: rgb(236, 72, 153);"></div></div></div>
+  </div>
+
+  <!-- SHARED EDUC -->
+  <div class="row-label" data-ws="shared" style="opacity: 1;"><h3>Shared Educ. Resources</h3><span class="owner-tag">John Silky</span></div>
+  <div class="cell" data-ws="shared" style="opacity: 1;">
+    <div class="sticky b" data-id="sh1" data-ws="shared" data-sh="seea utility" data-title="Team — Shared Educ. Resources" data-body="Team members:
+• SEEA
+• State Energy Offices
+• Utilities
+• Service Providers" onclick="openTask(this)" style="opacity: 1;"><strong>Team</strong><ul><li>SEEA</li><li>State Energy Offices</li><li>Utilities</li><li>Service Providers</li></ul><div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+  </div>
+  <div class="cell" data-ws="shared" style="opacity: 1;"></div>
+  <div class="cell" data-ws="shared" style="opacity: 1;">
+    <div class="sticky b" data-id="sh2" data-ws="shared" data-sh="seea icf" data-title="First steps — Consortium" data-body="First steps for building the consortium:
+• Partnerships
+• Social capital
+• Mutual need
+• Similar projects" onclick="openTask(this)" style="opacity: 1;"><strong>First steps — Consortium</strong><ul><li>Partnerships</li><li>Social capital</li><li>Mutual need</li><li>Similar projects</li></ul><div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="ICF" style="background: rgb(236, 72, 153);"></div></div></div>
+  </div>
+  <div class="cell" data-ws="shared" style="opacity: 1;">
+    <div class="sticky b" data-id="sh3" data-ws="shared" data-sh="seea utility aceee" data-title="Consortium — Establish goals + funding" data-body="Consortium work: Establish goals and funding mechanism." onclick="openTask(this)" style="opacity: 1;"><strong>Consortium</strong> Establish goals + funding mechanism<div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div><div class="s-dot" title="ACEEE" style="background: rgb(245, 158, 11);"></div></div></div>
+  </div>
+  <div class="cell" data-ws="shared" style="opacity: 1;">
+    <div class="sticky g" data-id="sh4" data-ws="shared" data-sh="seea icf utility" data-title="Cost/budget estimate + issue RFP + SOW complete" data-body="Steps:
+• Cost / budget estimate
+• Issue RFP
+• SOW drafted — complete" onclick="openTask(this)" style="opacity: 1;"><ul><li>Cost / budget estimate</li><li>Issue RFP</li><li>SOW drafted — complete</li></ul><div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="ICF" style="background: rgb(236, 72, 153);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+    <div class="sticky b" data-id="sh5" data-ws="shared" data-sh="seea icf" data-title="Develop timeframe, tools &amp; prototype" data-body="Develop time frame, identify tools &amp; technologies, prototype the shared education resource." onclick="openTask(this)" style="opacity: 1;">Develop timeframe · Identify tools &amp; tech · Prototype<div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="ICF" style="background: rgb(236, 72, 153);"></div></div></div>
+  </div>
+  <div class="cell last-row" data-ws="shared" style="opacity: 1;">
+    <div class="sticky p" data-id="sh6" data-ws="shared" data-sh="nrdc seea" data-title="Socialize with commissioners &amp; regulatory staff" data-body="Socialize this idea with commissioners and regulatory staff. Owners: NRDC, SEEA." onclick="openTask(this)" style="opacity: 1;">Socialize with commissioners &amp; regulatory staff<div class="s-dots"><div class="s-dot" title="NRDC" style="background: rgb(139, 92, 246);"></div><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div></div></div>
+    <div class="sticky p" data-id="sh7" data-ws="shared" data-sh="aceee seea" data-title="KPIs = proof of concept for grid attribution contracts" data-body="KPIs = proof of concept for grid attribution contracts. Owner: ACEEE." onclick="openTask(this)" style="opacity: 1;">KPIs = proof of concept for grid attribution contracts<div class="s-dots"><div class="s-dot" title="ACEEE" style="background: rgb(245, 158, 11);"></div><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div></div></div>
+  </div>
+
+  <!-- DSM -->
+  <div class="row-label" data-ws="dsm" style="opacity: 1;"><h3>DSM + Hyperscalers</h3><span class="owner-tag">John Silky</span></div>
+  <div class="cell" data-ws="dsm" style="opacity: 1;">
+    <div class="sticky p" data-id="dsm1" data-ws="dsm" data-sh="utility seea" data-title="Find entity with new project in specific place" data-body="Find entity with a new project in a specific place (partnerships) + 1st steps." onclick="openTask(this)" style="opacity: 1;">Find entity w/ new project in a specific place (partnerships) + 1st steps<div class="s-dots"><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div></div></div>
+  </div>
+  <div class="cell" data-ws="dsm" style="opacity: 1;">
+    <div class="sticky p" data-id="dsm2" data-ws="dsm" data-sh="icf seea" data-title="Identify/convene early adopters" data-body="Identify and convene early adopters for the DSM + Hyperscaler initiative. Owner: ICF." onclick="openTask(this)" style="opacity: 1;">Identify / convene early adopters<div class="s-dots"><div class="s-dot" title="ICF" style="background: rgb(236, 72, 153);"></div><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div></div></div>
+  </div>
+  <div class="cell" data-ws="dsm" style="opacity: 1;">
+    <div class="sticky b" data-id="dsm3" data-ws="dsm" data-sh="seea icf utility" data-title="Clear articulation of project" data-body="Clear articulation of project:
+• Focus question
+• Needs
+• Challenges
+• Tagline" onclick="openTask(this)" style="opacity: 1;"><strong>Clear articulation of project</strong><ul><li>Focus question</li><li>Needs</li><li>Challenges</li><li>Tagline</li></ul><div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="ICF" style="background: rgb(236, 72, 153);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+  </div>
+  <div class="cell" data-ws="dsm" style="opacity: 1;">
+    <div class="sticky p" data-id="dsm4" data-ws="dsm" data-sh="aceee utility" data-title="$s for EE → attribution credits" data-body="$s for EE translated into attribution credits. Owner: ACEEE." onclick="openTask(this)" style="opacity: 1;">$s for EE → attribution credits<div class="s-dots"><div class="s-dot" title="ACEEE" style="background: rgb(245, 158, 11);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+  </div>
+  <div class="cell" data-ws="dsm" style="opacity: 1;">
+    <div class="sticky p" data-id="dsm5" data-ws="dsm" data-sh="gpc utility" data-title="Define initial tranche for utility DSM offerings" data-body="Define initial tranche for utility DSM offerings. Funding needs. Owners: GPC, TVA, DUKE." onclick="openTask(this)" style="opacity: 1;">Define initial tranche for utility DSM offerings<div class="s-dots"><div class="s-dot" title="GPC" style="background: rgb(16, 185, 129);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+  </div>
+  <div class="cell last-row" data-ws="dsm" style="opacity: 1;">
+    <div class="sticky p" data-id="dsm6" data-ws="dsm" data-sh="gpc icf" data-title="Experiments: pilot proof of concept" data-body="Experiments: pilot proof of concept for DSM + Hyperscaler model. Owners: GPC, ICF." onclick="openTask(this)" style="opacity: 1;">Experiments: pilot proof of concept<div class="s-dots"><div class="s-dot" title="GPC" style="background: rgb(16, 185, 129);"></div><div class="s-dot" title="ICF" style="background: rgb(236, 72, 153);"></div></div></div>
+  </div>
+
+  <!-- VALUE DSM -->
+  <div class="row-label" data-ws="value" style="opacity: 1;"><h3>Value DSM Similarly</h3><span class="owner-tag">John Silky</span></div>
+  <div class="cell" data-ws="value" style="opacity: 1;">
+    <div class="sticky o" data-id="val1" data-ws="value" data-sh="utility" data-title="Gatekeepers" data-body="Key gatekeepers to engage:
+• Utility
+• Manufacturers
+• DERMS provider
+• Modeling company" onclick="openTask(this)" style="opacity: 1;"><strong>Gatekeepers</strong><ul><li>Utility</li><li>Manufacturers</li><li>DERMS provider</li><li>Modeling company</li></ul><div class="s-dots"><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div></div></div>
+  </div>
+  <div class="cell" data-ws="value" style="opacity: 1;">
+    <div class="sticky o" data-id="val2" data-ws="value" data-sh="utility seea" data-title="Measurable goals" data-body="Measurable goals:
+• Load profile
+• Peak shaving
+• EE savings
+• Bill savings
+• Customer SAT
+• Distribution deferral
+• Deferred upgrades" onclick="openTask(this)" style="opacity: 1;"><strong>Measurable goals</strong><ul><li>Load profile</li><li>Peak shaving</li><li>EE savings</li><li>Bill savings · Customer SAT</li><li>Distribution deferral</li></ul><div class="s-dots"><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div></div></div>
+    <div class="sticky o" data-id="val3" data-ws="value" data-sh="utility icf" data-title="Experiments" data-body="Experiments:
+• Task definition
+• Data: how to manage?
+• HVAC / consumption
+• Weather data
+• Load shape models" onclick="openTask(this)" style="opacity: 1;"><strong>Experiments</strong><ul><li>Task definition</li><li>Data management</li><li>HVAC / consumption</li><li>Weather data · Load shape models</li></ul><div class="s-dots"><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div><div class="s-dot" title="ICF" style="background: rgb(236, 72, 153);"></div></div></div>
+  </div>
+  <div class="cell" data-ws="value" style="opacity: 1;">
+    <div class="sticky o" data-id="val4" data-ws="value" data-sh="utility seea" data-title="Funding questions" data-body="Funding:
+• How much money is needed?
+• Pilot size 5/50?
+• Who contributes to funds?
+• Private funding options" onclick="openTask(this)" style="opacity: 1;"><strong>Funding</strong><ul><li>How much is needed?</li><li>Pilot size 5/50?</li><li>Who contributes?</li><li>Private funding ops</li></ul><div class="s-dots"><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div></div></div>
+    <div class="sticky o" data-id="val5" data-ws="value" data-sh="utility icf" data-title="Tools &amp; tech" data-body="Tools &amp; Tech:
+• What measures are needed?
+• Hardware + software
+• Pilot implementation" onclick="openTask(this)" style="opacity: 1;"><strong>Tools &amp; tech</strong><ul><li>What measures are needed?</li><li>Hardware + software</li><li>Pilot implementation</li></ul><div class="s-dots"><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div><div class="s-dot" title="ICF" style="background: rgb(236, 72, 153);"></div></div></div>
+  </div>
+  <div class="cell" data-ws="value" style="opacity: 1;"></div>
+  <div class="cell" data-ws="value" style="opacity: 1;">
+    <div class="sticky o" data-id="val6" data-ws="value" data-sh="seea utility aceee" data-title="Establish measurable goals (KPIs)" data-body="Establish measurable goals (KPIs). Q3 &#39;27 milestone." onclick="openTask(this)" style="opacity: 1;">Establish measurable goals (KPIs)<div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div><div class="s-dot" title="ACEEE" style="background: rgb(245, 158, 11);"></div></div></div>
+  </div>
+  <div class="cell last-row" data-ws="value" style="opacity: 1;">
+    <div class="sticky o" data-id="val7" data-ws="value" data-sh="seea utility aceee" data-title="Measurable goals — Again" data-body="Revisit and confirm measurable goals. Q4 &#39;27." onclick="openTask(this)" style="opacity: 1;">Measurable goals — <strong>Again</strong><div class="s-dots"><div class="s-dot" title="SEEA" style="background: rgb(99, 102, 241);"></div><div class="s-dot" title="Utility" style="background: rgb(59, 130, 246);"></div><div class="s-dot" title="ACEEE" style="background: rgb(245, 158, 11);"></div></div></div>
+  </div>
+
+</div></div>
+
+<!-- SIDE PANEL -->
+<div class="side-panel" id="side-panel">
+  <div class="panel-header"><h2 id="panel-heading">Task detail</h2><button class="panel-close" onclick="closePanel()">✕</button></div>
+  <div class="panel-body" id="panel-body">
+    <div><div class="panel-meta">Workforce Pathways</div><div class="panel-title">Identify who "owns it"</div></div>
+    <div class="panel-section"><div class="panel-section-label">Notes</div><div class="panel-text"><p>Determine ownership and accountability for the workforce pathways initiative.</p></div></div>
+    <div class="panel-section"><div class="panel-section-label">Organizations</div><div class="sh-list"><div class="sh-row" style="--shc:#3b82f6"><div class="orb-avatar" style="width:22px;height:22px;font-size:0.5rem;border:1.5px solid #3b82f6;background:#eff6ff;color:#1e3a8a">UT</div><div><div class="sh-name">Utility</div><div class="sh-full">Utility Partners (various)</div></div></div><div class="sh-row" style="--shc:#6366f1"><div class="orb-avatar" style="width:22px;height:22px;font-size:0.5rem;border:1.5px solid #6366f1;background:#eef2ff;color:#3730a3">SE</div><div><div class="sh-name">SEEA</div><div class="sh-full">Southeast Energy Efficiency Alliance</div></div></div></div></div></div>
+</div>
+</div></div>
+
+<!-- ══════════ TAB 2: STAKEHOLDER MAP ══════════ -->
+<div class="tab-panel" id="panel-stakeholders">
+<div class="smap-outer">
+  <p class="smap-intro">Select an organization to see which workstreams they connect to and which tasks they own. Add new organizations using the button below.</p>
+
+  <!-- NETWORK -->
+  <div class="network-wrap">
+    <div class="net-left">
+      <div class="net-left-label">Organizations</div>
+      <div id="net-orbs"><div class="net-orb" id="net-orb-seea" style="--oc: #6366f1; --olight: #eef2ff;"><div class="orb-avatar" style="border-color:#6366f1;background:#eef2ff;color:#3730a3">SE</div><div class="orb-label">SEEA</div><div class="orb-count">16</div></div><div class="net-orb" id="net-orb-icf" style="--oc: #ec4899; --olight: #fdf2f8;"><div class="orb-avatar" style="border-color:#ec4899;background:#fdf2f8;color:#9d174d">IC</div><div class="orb-label">ICF</div><div class="orb-count">12</div></div><div class="net-orb" id="net-orb-aceee" style="--oc: #f59e0b; --olight: #fffbeb;"><div class="orb-avatar" style="border-color:#f59e0b;background:#fffbeb;color:#78350f">AC</div><div class="orb-label">ACEEE</div><div class="orb-count">5</div></div><div class="net-orb" id="net-orb-gpc" style="--oc: #10b981; --olight: #f0fdf4;"><div class="orb-avatar" style="border-color:#10b981;background:#f0fdf4;color:#065f46">GP</div><div class="orb-label">GPC</div><div class="orb-count">2</div></div><div class="net-orb" id="net-orb-utility" style="--oc: #3b82f6; --olight: #eff6ff;"><div class="orb-avatar" style="border-color:#3b82f6;background:#eff6ff;color:#1e3a8a">UT</div><div class="orb-label">Utility</div><div class="orb-count">14</div></div><div class="net-orb" id="net-orb-nrdc" style="--oc: #8b5cf6; --olight: #f5f3ff;"><div class="orb-avatar" style="border-color:#8b5cf6;background:#f5f3ff;color:#4c1d95">NR</div><div class="orb-label">NRDC</div><div class="orb-count">1</div></div></div>
+      <button class="net-add-btn" onclick="openAddOrg()">+ Add organization</button>
+      <div class="sync-status" id="sync-status"></div>
+    </div>
+    <div class="net-right">
+      <div class="net-right-label">Workstreams</div>
+      <p class="net-hint" id="net-hint">Select an organization to see their connections</p>
+      <div class="net-ws-list" id="net-ws-list"><div class="net-ws-row" id="net-ws-workforce" style="--litc: #6366f1;"><div class="net-ws-top"><div class="net-ws-name">Workforce Pathways</div><div class="net-ws-dots" id="nwdots-workforce"><div class="net-ws-dot" id="nwd-workforce-seea" style="background:#6366f1" title="SEEA"></div><div class="net-ws-dot" id="nwd-workforce-icf" style="background:#ec4899" title="ICF"></div><div class="net-ws-dot" id="nwd-workforce-aceee" style="background:#f59e0b" title="ACEEE"></div><div class="net-ws-dot" id="nwd-workforce-gpc" style="background:#10b981" title="GPC"></div><div class="net-ws-dot" id="nwd-workforce-utility" style="background:#3b82f6" title="Utility"></div><div class="net-ws-dot" id="nwd-workforce-nrdc" style="background:#8b5cf6" title="NRDC"></div></div></div><div class="net-bar-bg"><div class="net-bar-fill" id="nbar-workforce" style="width: 0px; background: rgb(99, 102, 241);"></div></div><div class="net-task-pills" id="npills-workforce"></div></div><div class="net-ws-row" id="net-ws-trm" style="--litc: #6366f1;"><div class="net-ws-top"><div class="net-ws-name">TRM</div><div class="net-ws-dots" id="nwdots-trm"><div class="net-ws-dot" id="nwd-trm-seea" style="background:#6366f1" title="SEEA"></div><div class="net-ws-dot" id="nwd-trm-icf" style="background:#ec4899" title="ICF"></div><div class="net-ws-dot" id="nwd-trm-aceee" style="background:#f59e0b" title="ACEEE"></div><div class="net-ws-dot" id="nwd-trm-gpc" style="background:#10b981" title="GPC"></div><div class="net-ws-dot" id="nwd-trm-utility" style="background:#3b82f6" title="Utility"></div><div class="net-ws-dot" id="nwd-trm-nrdc" style="background:#8b5cf6" title="NRDC"></div></div></div><div class="net-bar-bg"><div class="net-bar-fill" id="nbar-trm" style="width: 0px; background: rgb(99, 102, 241);"></div></div><div class="net-task-pills" id="npills-trm"></div></div><div class="net-ws-row" id="net-ws-shared" style="--litc: #6366f1;"><div class="net-ws-top"><div class="net-ws-name">Shared Educ. Resources</div><div class="net-ws-dots" id="nwdots-shared"><div class="net-ws-dot" id="nwd-shared-seea" style="background:#6366f1" title="SEEA"></div><div class="net-ws-dot" id="nwd-shared-icf" style="background:#ec4899" title="ICF"></div><div class="net-ws-dot" id="nwd-shared-aceee" style="background:#f59e0b" title="ACEEE"></div><div class="net-ws-dot" id="nwd-shared-gpc" style="background:#10b981" title="GPC"></div><div class="net-ws-dot" id="nwd-shared-utility" style="background:#3b82f6" title="Utility"></div><div class="net-ws-dot" id="nwd-shared-nrdc" style="background:#8b5cf6" title="NRDC"></div></div></div><div class="net-bar-bg"><div class="net-bar-fill" id="nbar-shared" style="width: 0px; background: rgb(99, 102, 241);"></div></div><div class="net-task-pills" id="npills-shared"></div></div><div class="net-ws-row" id="net-ws-dsm" style="--litc: #6366f1;"><div class="net-ws-top"><div class="net-ws-name">DSM + Hyperscalers</div><div class="net-ws-dots" id="nwdots-dsm"><div class="net-ws-dot" id="nwd-dsm-seea" style="background:#6366f1" title="SEEA"></div><div class="net-ws-dot" id="nwd-dsm-icf" style="background:#ec4899" title="ICF"></div><div class="net-ws-dot" id="nwd-dsm-aceee" style="background:#f59e0b" title="ACEEE"></div><div class="net-ws-dot" id="nwd-dsm-gpc" style="background:#10b981" title="GPC"></div><div class="net-ws-dot" id="nwd-dsm-utility" style="background:#3b82f6" title="Utility"></div><div class="net-ws-dot" id="nwd-dsm-nrdc" style="background:#8b5cf6" title="NRDC"></div></div></div><div class="net-bar-bg"><div class="net-bar-fill" id="nbar-dsm" style="width: 0px; background: rgb(99, 102, 241);"></div></div><div class="net-task-pills" id="npills-dsm"></div></div><div class="net-ws-row" id="net-ws-value" style="--litc: #6366f1;"><div class="net-ws-top"><div class="net-ws-name">Value DSM Similarly</div><div class="net-ws-dots" id="nwdots-value"><div class="net-ws-dot" id="nwd-value-seea" style="background:#6366f1" title="SEEA"></div><div class="net-ws-dot" id="nwd-value-icf" style="background:#ec4899" title="ICF"></div><div class="net-ws-dot" id="nwd-value-aceee" style="background:#f59e0b" title="ACEEE"></div><div class="net-ws-dot" id="nwd-value-gpc" style="background:#10b981" title="GPC"></div><div class="net-ws-dot" id="nwd-value-utility" style="background:#3b82f6" title="Utility"></div><div class="net-ws-dot" id="nwd-value-nrdc" style="background:#8b5cf6" title="NRDC"></div></div></div><div class="net-bar-bg"><div class="net-bar-fill" id="nbar-value" style="width: 0px; background: rgb(99, 102, 241);"></div></div><div class="net-task-pills" id="npills-value"></div></div></div>
+      <div class="net-actions" id="net-actions" style="display: none;">
+        <button class="net-action" onclick="clearNetSelection()">Clear</button>
+        <button class="net-action primary" onclick="jumpToBoard()">View on board ↗</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORG CARDS -->
+  <div class="cards-label">All organizations</div>
+  <div class="cards-grid" id="cards-grid"><div class="org-card">
+      <div class="org-card-head">
+        <div class="org-avatar" style="background:#eef2ff;color:#3730a3;border:1.5px solid #6366f1">SE</div>
+        <div><div class="org-name">SEEA</div><div class="org-full">Southeast Energy Efficiency Alliance</div></div>
+        <span class="org-task-count">16 tasks</span>
+      </div>
+      <div style="height:1px;background:var(--rule)"></div>
+      
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#6366f1"></div>
+        <span class="org-ws-name">Workforce Pathways</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Define challenges</span><span class="org-chip">Discovery</span><span class="org-chip">Identify stakeholders</span><span class="org-chip">Design pilot</span></div>
+    
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#6366f1"></div>
+        <span class="org-ws-name">TRM</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Mission setup</span><span class="org-chip">SOW / specs</span><span class="org-chip">Contract</span><span class="org-chip">First follower</span></div>
+    
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#6366f1"></div>
+        <span class="org-ws-name">Shared Educ. Resources</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Team setup</span><span class="org-chip">Consortium</span><span class="org-chip">RFP/SOW</span><span class="org-chip">Socialize</span></div>
+    
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#6366f1"></div>
+        <span class="org-ws-name">DSM + Hyperscalers</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Find entity</span><span class="org-chip">Articulate project</span></div>
+    
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#6366f1"></div>
+        <span class="org-ws-name">Value DSM Similarly</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Measurable goals</span><span class="org-chip">Establish KPIs</span></div>
+    
+      <button class="org-edit-btn" onclick="openEditOrg(&#39;seea&#39;)">Edit</button></div><div class="org-card">
+      <div class="org-card-head">
+        <div class="org-avatar" style="background:#fdf2f8;color:#9d174d;border:1.5px solid #ec4899">IC</div>
+        <div><div class="org-name">ICF</div><div class="org-full">ICF International</div></div>
+        <span class="org-task-count">12 tasks</span>
+      </div>
+      <div style="height:1px;background:var(--rule)"></div>
+      
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#ec4899"></div>
+        <span class="org-ws-name">Workforce Pathways</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Design pilot</span></div>
+    
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#ec4899"></div>
+        <span class="org-ws-name">TRM</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Test &amp; validate</span><span class="org-chip">SOW / specs</span><span class="org-chip">Early adopters</span></div>
+    
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#ec4899"></div>
+        <span class="org-ws-name">Shared Educ. Resources</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">First steps</span><span class="org-chip">RFP/SOW</span><span class="org-chip">Prototype</span></div>
+    
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#ec4899"></div>
+        <span class="org-ws-name">DSM + Hyperscalers</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Early adopters</span><span class="org-chip">Articulate project</span><span class="org-chip">Pilot PoC</span></div>
+    
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#ec4899"></div>
+        <span class="org-ws-name">Value DSM Similarly</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Experiments</span><span class="org-chip">Tools &amp; tech</span></div>
+    
+      <button class="org-edit-btn" onclick="openEditOrg(&#39;icf&#39;)">Edit</button></div><div class="org-card">
+      <div class="org-card-head">
+        <div class="org-avatar" style="background:#fffbeb;color:#78350f;border:1.5px solid #f59e0b">AC</div>
+        <div><div class="org-name">ACEEE</div><div class="org-full">American Council for an Energy-Efficient Economy</div></div>
+        <span class="org-task-count">5 tasks</span>
+      </div>
+      <div style="height:1px;background:var(--rule)"></div>
+      
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#f59e0b"></div>
+        <span class="org-ws-name">Shared Educ. Resources</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Consortium goals</span><span class="org-chip">KPIs</span></div>
+    
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#f59e0b"></div>
+        <span class="org-ws-name">DSM + Hyperscalers</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Attribution credits</span></div>
+    
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#f59e0b"></div>
+        <span class="org-ws-name">Value DSM Similarly</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Establish KPIs</span><span class="org-chip">Goals — again</span></div>
+    
+      <button class="org-edit-btn" onclick="openEditOrg(&#39;aceee&#39;)">Edit</button></div><div class="org-card">
+      <div class="org-card-head">
+        <div class="org-avatar" style="background:#f0fdf4;color:#065f46;border:1.5px solid #10b981">GP</div>
+        <div><div class="org-name">GPC</div><div class="org-full">Georgia Power Company</div></div>
+        <span class="org-task-count">2 tasks</span>
+      </div>
+      <div style="height:1px;background:var(--rule)"></div>
+      
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#10b981"></div>
+        <span class="org-ws-name">DSM + Hyperscalers</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">DSM tranche</span><span class="org-chip">Pilot PoC</span></div>
+    
+      <button class="org-edit-btn" onclick="openEditOrg(&#39;gpc&#39;)">Edit</button></div><div class="org-card">
+      <div class="org-card-head">
+        <div class="org-avatar" style="background:#eff6ff;color:#1e3a8a;border:1.5px solid #3b82f6">UT</div>
+        <div><div class="org-name">Utility</div><div class="org-full">Utility Partners (various)</div></div>
+        <span class="org-task-count">14 tasks</span>
+      </div>
+      <div style="height:1px;background:var(--rule)"></div>
+      
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#3b82f6"></div>
+        <span class="org-ws-name">Workforce Pathways</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Identify owner</span><span class="org-chip">Establish motivation</span><span class="org-chip">Funding</span></div>
+    
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#3b82f6"></div>
+        <span class="org-ws-name">TRM</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Who? setup</span><span class="org-chip">Contract</span></div>
+    
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#3b82f6"></div>
+        <span class="org-ws-name">Shared Educ. Resources</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Consortium goals</span><span class="org-chip">RFP</span></div>
+    
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#3b82f6"></div>
+        <span class="org-ws-name">DSM + Hyperscalers</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Find entity</span><span class="org-chip">Articulate project</span></div>
+    
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#3b82f6"></div>
+        <span class="org-ws-name">Value DSM Similarly</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Gatekeepers</span><span class="org-chip">Goals</span><span class="org-chip">Experiments</span><span class="org-chip">Funding</span><span class="org-chip">KPIs</span></div>
+    
+      <button class="org-edit-btn" onclick="openEditOrg(&#39;utility&#39;)">Edit</button></div><div class="org-card">
+      <div class="org-card-head">
+        <div class="org-avatar" style="background:#f5f3ff;color:#4c1d95;border:1.5px solid #8b5cf6">NR</div>
+        <div><div class="org-name">NRDC</div><div class="org-full">Natural Resources Defense Council</div></div>
+        <span class="org-task-count">1 tasks</span>
+      </div>
+      <div style="height:1px;background:var(--rule)"></div>
+      
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:#8b5cf6"></div>
+        <span class="org-ws-name">Shared Educ. Resources</span>
+      </div>
+      <div class="org-chips"><span class="org-chip">Socialize with commissioners</span></div>
+    
+      <button class="org-edit-btn" onclick="openEditOrg(&#39;nrdc&#39;)">Edit</button></div></div>
+</div>
+</div>
+
+<!-- ADD / EDIT ORG MODAL -->
+<div class="modal-bg" id="modal-bg" onclick="closeModalOutside(event)">
+<div class="modal">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <h2 id="modal-title">Add organization</h2>
+  <div class="sheets-setup" id="sheets-notice" style="display:none">
+    <strong>Google Sheets not yet connected.</strong> Changes will save locally only.<br>
+    To enable sync, paste your Apps Script URL below and save.
+  </div>
+  <div class="form-group">
+    <label class="form-label">Organization name</label>
+    <input class="form-input" id="f-name" placeholder="e.g. TVA">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Full name</label>
+    <input class="form-input" id="f-full" placeholder="e.g. Tennessee Valley Authority">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Color</label>
+    <div class="color-swatches" id="color-swatches"></div>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Workstream involvement &amp; tasks</label>
+    <div class="ws-checks" id="ws-checks"></div>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Google Apps Script URL (for shared sync)</label>
+    <input class="form-input" id="f-script-url" placeholder="https://script.google.com/macros/s/…/exec">
+    <div style="font-size:0.58rem;color:var(--ink-muted);margin-top:0.35rem">Paste URL once to enable sync for everyone. See setup guide below.</div>
+  </div>
+  <div class="form-actions">
+    <button class="form-btn" onclick="closeModal()">Cancel</button>
+    <button class="form-btn primary" onclick="saveOrg()">Save organization</button>
+  </div>
+  <div id="modal-sync-status" class="sync-status"></div>
+</div>
+</div>
+
+<script>
+const WS_LIST = [
+  { key:'workforce', name:'Workforce Pathways' },
+  { key:'trm',       name:'TRM' },
+  { key:'shared',    name:'Shared Educ. Resources' },
+  { key:'dsm',       name:'DSM + Hyperscalers' },
+  { key:'value',     name:'Value DSM Similarly' },
+];
+const WS_NAMES = Object.fromEntries(WS_LIST.map(w=>[w.key,w.name]));
+
+const PALETTE = ['#6366f1','#ec4899','#f59e0b','#10b981','#3b82f6','#8b5cf6','#ef4444','#14b8a6','#f97316','#84cc16'];
+const PALETTE_LIGHT = ['#eef2ff','#fdf2f8','#fffbeb','#f0fdf4','#eff6ff','#f5f3ff','#fef2f2','#f0fdfa','#fff7ed','#f7fee7'];
+const PALETTE_TXT =  ['#3730a3','#9d174d','#78350f','#065f46','#1e3a8a','#4c1d95','#7f1d1d','#134e4a','#7c2d12','#365314'];
+
+const BASE_ORGS = [
+  { key:'seea',    name:'SEEA',    full:'Southeast Energy Efficiency Alliance',              color:'#6366f1', light:'#eef2ff', txt:'#3730a3', tasks:{ workforce:['Define challenges','Discovery','Identify stakeholders','Design pilot'], trm:['Mission setup','SOW / specs','Contract','First follower'], shared:['Team setup','Consortium','RFP/SOW','Socialize'], dsm:['Find entity','Articulate project'], value:['Measurable goals','Establish KPIs'] } },
+  { key:'icf',     name:'ICF',     full:'ICF International',                                color:'#ec4899', light:'#fdf2f8', txt:'#9d174d', tasks:{ workforce:['Design pilot'], trm:['Test & validate','SOW / specs','Early adopters'], shared:['First steps','RFP/SOW','Prototype'], dsm:['Early adopters','Articulate project','Pilot PoC'], value:['Experiments','Tools & tech'] } },
+  { key:'aceee',   name:'ACEEE',   full:'American Council for an Energy-Efficient Economy', color:'#f59e0b', light:'#fffbeb', txt:'#78350f', tasks:{ shared:['Consortium goals','KPIs'], dsm:['Attribution credits'], value:['Establish KPIs','Goals — again'] } },
+  { key:'gpc',     name:'GPC',     full:'Georgia Power Company',                            color:'#10b981', light:'#f0fdf4', txt:'#065f46', tasks:{ dsm:['DSM tranche','Pilot PoC'] } },
+  { key:'utility', name:'Utility', full:'Utility Partners (various)',                       color:'#3b82f6', light:'#eff6ff', txt:'#1e3a8a', tasks:{ workforce:['Identify owner','Establish motivation','Funding'], trm:['Who? setup','Contract'], shared:['Consortium goals','RFP'], dsm:['Find entity','Articulate project'], value:['Gatekeepers','Goals','Experiments','Funding','KPIs'] } },
+  { key:'nrdc',    name:'NRDC',    full:'Natural Resources Defense Council',                color:'#8b5cf6', light:'#f5f3ff', txt:'#4c1d95', tasks:{ shared:['Socialize with commissioners'] } },
+];
+
+let orgs = [];
+let selectedOrgKey = null;
+let activeWS = 'all';
+let activeShFilter = null;
+let editingKey = null;
+let pickedColor = PALETTE[0];
+let scriptUrl = '';
+let currentTaskEl = null;
+
+function loadState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('ee-roadmap-orgs') || 'null');
+    orgs = saved && saved.length ? saved : JSON.parse(JSON.stringify(BASE_ORGS));
+    scriptUrl = localStorage.getItem('ee-roadmap-script-url') || '';
+  } catch(e) { orgs = JSON.parse(JSON.stringify(BASE_ORGS)); }
+}
+function saveState() {
+  localStorage.setItem('ee-roadmap-orgs', JSON.stringify(orgs));
+  if (scriptUrl) localStorage.setItem('ee-roadmap-script-url', scriptUrl);
+}
+
+function totalTasks(org) { return Object.values(org.tasks).reduce((a,b)=>a+b.length,0); }
+
+function rebuildShFilterChips() {
+  const wrap = document.getElementById('sh-filter-chips');
+  const existing = wrap.querySelectorAll('.chip');
+  existing.forEach(c => c.remove());
+  orgs.forEach(org => {
+    const btn = document.createElement('button');
+    btn.className = 'chip sh-chip' + (activeShFilter === org.key ? ' active' : '');
+    btn.style.setProperty('--sc', org.color);
+    btn.textContent = org.name;
+    btn.onclick = () => filterSh(org.key, btn);
+    wrap.appendChild(btn);
+  });
+}
+
+function renderDots() {
+  document.querySelectorAll('.sticky[data-sh]').forEach(sticky => {
+    const dotsEl = sticky.querySelector('.s-dots');
+    if (!dotsEl) return;
+    dotsEl.innerHTML = '';
+    const keys = (sticky.dataset.sh || '').split(' ').filter(Boolean);
+    keys.forEach(k => {
+      const org = orgs.find(o => o.key === k);
+      if (!org) return;
+      const d = document.createElement('div');
+      d.className = 's-dot';
+      d.style.background = org.color;
+      d.title = org.name;
+      dotsEl.appendChild(d);
+    });
+  });
+}
+
+function buildNetworkPanel() {
+  const orbsEl = document.getElementById('net-orbs');
+  orbsEl.innerHTML = '';
+  orgs.forEach(org => {
+    const div = document.createElement('div');
+    div.className = 'net-orb' + (selectedOrgKey === org.key ? ' selected' : '') + (selectedOrgKey && selectedOrgKey !== org.key ? ' dimmed' : '');
+    div.id = 'net-orb-' + org.key;
+    div.style.setProperty('--oc', org.color);
+    div.style.setProperty('--olight', org.light || '#f5f5f5');
+    div.innerHTML = `<div class="orb-avatar" style="border-color:${org.color};background:${org.light||'#f5f5f5'};color:${org.txt||'#333'}">${org.name.slice(0,2).toUpperCase()}</div><div class="orb-label">${org.name}</div><div class="orb-count">${totalTasks(org)}</div>`;
+    div.onclick = () => selectOrg(org.key);
+    orbsEl.appendChild(div);
+  });
+
+  const wsList = document.getElementById('net-ws-list');
+  wsList.innerHTML = '';
+  WS_LIST.forEach(ws => {
+    const row = document.createElement('div');
+    row.className = 'net-ws-row';
+    row.id = 'net-ws-' + ws.key;
+    const dotsHtml = orgs.map(o => `<div class="net-ws-dot" id="nwd-${ws.key}-${o.key}" style="background:${o.color}" title="${o.name}"></div>`).join('');
+    row.innerHTML = `<div class="net-ws-top"><div class="net-ws-name">${ws.name}</div><div class="net-ws-dots" id="nwdots-${ws.key}">${dotsHtml}</div></div><div class="net-bar-bg"><div class="net-bar-fill" id="nbar-${ws.key}"></div></div><div class="net-task-pills" id="npills-${ws.key}"></div>`;
+    wsList.appendChild(row);
+  });
+
+  if (selectedOrgKey) selectOrg(selectedOrgKey, true);
+}
+
+function selectOrg(key, keepSelected) {
+  if (!keepSelected && selectedOrgKey === key) { clearNetSelection(); return; }
+  selectedOrgKey = key;
+  const org = orgs.find(o => o.key === key);
+  if (!org) return;
+
+  document.querySelectorAll('.net-orb').forEach(el => {
+    el.classList.toggle('selected', el.id === 'net-orb-'+key);
+    el.classList.toggle('dimmed', el.id !== 'net-orb-'+key);
+  });
+
+  WS_LIST.forEach(ws => {
+    const tasks = org.tasks[ws.key] || [];
+    const has = tasks.length > 0;
+    const row = document.getElementById('net-ws-'+ws.key);
+    if (!row) return;
+    row.classList.toggle('lit', has);
+    row.style.setProperty('--litc', org.color);
+    orgs.forEach(o => {
+      const dot = document.getElementById(`nwd-${ws.key}-${o.key}`);
+      if (dot) dot.classList.toggle('on', o.key === key && has);
+    });
+    const bar = document.getElementById('nbar-'+ws.key);
+    if (bar) { bar.style.width = has ? '100%' : '0'; bar.style.background = org.color; }
+    const pills = document.getElementById('npills-'+ws.key);
+    if (pills) {
+      pills.innerHTML = tasks.map(t => `<span class="net-task-pill">${t}</span>`).join('');
+      pills.classList.toggle('open', has);
+    }
+  });
+
+  document.getElementById('net-hint').textContent = `${org.name} — ${Object.keys(org.tasks).length} workstream${Object.keys(org.tasks).length!==1?'s':''} · ${totalTasks(org)} tasks`;
+  document.getElementById('net-actions').style.display = 'flex';
+}
+
+function clearNetSelection() {
+  selectedOrgKey = null;
+  document.querySelectorAll('.net-orb').forEach(el => { el.classList.remove('selected','dimmed'); });
+  WS_LIST.forEach(ws => {
+    const row = document.getElementById('net-ws-'+ws.key);
+    if (row) row.classList.remove('lit');
+    document.querySelectorAll(`[id^="nwd-${ws.key}-"]`).forEach(d => d.classList.remove('on'));
+    const bar = document.getElementById('nbar-'+ws.key);
+    if (bar) { bar.style.width = '0'; }
+    const pills = document.getElementById('npills-'+ws.key);
+    if (pills) { pills.classList.remove('open'); pills.innerHTML = ''; }
+  });
+  document.getElementById('net-hint').textContent = 'Select an organization to see their connections';
+  document.getElementById('net-actions').style.display = 'none';
+}
+
+function jumpToBoard() {
+  if (!selectedOrgKey) return;
+  const org = orgs.find(o => o.key === selectedOrgKey);
+  if (!org) return;
+  switchTab('board', document.querySelector('.tab-btn'));
+  activeShFilter = selectedOrgKey;
+  setTimeout(() => { applyFilters(); rebuildShFilterChips(); }, 60);
+}
+
+function buildOrgCards() {
+  const grid = document.getElementById('cards-grid');
+  grid.innerHTML = '';
+  orgs.forEach(org => {
+    const card = document.createElement('div');
+    card.className = 'org-card';
+    const wsKeys = Object.keys(org.tasks).filter(k => (org.tasks[k]||[]).length > 0);
+    const wsHtml = wsKeys.map(k => `
+      <div class="org-ws-row">
+        <div class="org-ws-dot" style="background:${org.color}"></div>
+        <span class="org-ws-name">${WS_NAMES[k]||k}</span>
+      </div>
+      <div class="org-chips">${(org.tasks[k]||[]).map(t=>`<span class="org-chip">${t}</span>`).join('')}</div>
+    `).join('');
+    card.innerHTML = `
+      <div class="org-card-head">
+        <div class="org-avatar" style="background:${org.light||'#f5f5f5'};color:${org.txt||'#333'};border:1.5px solid ${org.color}">${org.name.slice(0,2).toUpperCase()}</div>
+        <div><div class="org-name">${org.name}</div><div class="org-full">${org.full||''}</div></div>
+        <span class="org-task-count">${totalTasks(org)} tasks</span>
+      </div>
+      <div style="height:1px;background:var(--rule)"></div>
+      ${wsHtml}
+      <button class="org-edit-btn" onclick="openEditOrg('${org.key}')">Edit</button>`;
+    grid.appendChild(card);
+  });
+}
+
+function renderAll() {
+  rebuildShFilterChips();
+  renderDots();
+  buildNetworkPanel();
+  buildOrgCards();
+  applyFilters();
+}
+
+// ── TABS ──
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('panel-'+name).classList.add('active');
+  closePanel();
+}
+
+// ── FILTERS ──
+function filterWS(ws, btn) {
+  activeWS = ws;
+  document.querySelectorAll('.toolbar .chip:not(.sh-chip)').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+function filterSh(key, btn) {
+  if (activeShFilter === key) { activeShFilter = null; document.querySelectorAll('.sh-chip').forEach(b=>b.classList.remove('active')); }
+  else { activeShFilter = key; document.querySelectorAll('.sh-chip').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
+  applyFilters();
+}
+function applyFilters() {
+  document.querySelectorAll('.sticky[data-id]').forEach(el => {
+    const ws = el.dataset.ws;
+    const sh = (el.dataset.sh||'').split(' ');
+    let show = true;
+    if (activeWS !== 'all' && ws !== activeWS) show = false;
+    if (activeShFilter && !sh.includes(activeShFilter)) show = false;
+    el.style.opacity = show ? '1' : '0.12';
+    el.style.pointerEvents = show ? '' : 'none';
+  });
+  document.querySelectorAll('.cell').forEach(c => { c.style.opacity = (activeWS!=='all'&&c.dataset.ws&&c.dataset.ws!==activeWS)?'0.25':'1'; });
+  document.querySelectorAll('.row-label').forEach(r => { r.style.opacity = (activeWS!=='all'&&r.dataset.ws!==activeWS)?'0.35':'1'; });
+}
+
+// ── SIDE PANEL ──
+function openTask(el) {
+  currentTaskEl = el;
+  const title = el.dataset.title, body = el.dataset.body||'', ws = el.dataset.ws;
+  const shKeys = (el.dataset.sh||'').split(' ').filter(Boolean);
+  const lines = body.split('\n'); let html='',inList=false;
+  for (const line of lines) {
+    if (line.startsWith('•')) { if(!inList){html+='<ul>';inList=true;} html+=`<li>${line.slice(1).trim()}</li>`; }
+    else { if(inList){html+='</ul>';inList=false;} if(line.trim()) html+=`<p>${line}</p>`; }
+  }
+  if(inList) html+='</ul>';
+  const shHtml = shKeys.map(k => {
+    const o = orgs.find(x=>x.key===k); if(!o) return '';
+    return `<div class="sh-row" style="--shc:${o.color}"><div class="orb-avatar" style="width:22px;height:22px;font-size:0.5rem;border:1.5px solid ${o.color};background:${o.light||'#f5f5f5'};color:${o.txt||'#333'}">${o.name.slice(0,2).toUpperCase()}</div><div><div class="sh-name">${o.name}</div><div class="sh-full">${o.full||''}</div></div></div>`;
+  }).join('');
+  document.getElementById('panel-heading').textContent = 'Task detail';
+  document.getElementById('panel-body').innerHTML = `
+    <div><div class="panel-meta">${WS_NAMES[ws]||ws}</div><div class="panel-title">${title}</div></div>
+    ${html?`<div class="panel-section"><div class="panel-section-label">Notes</div><div class="panel-text">${html}</div></div>`:''}
+    ${shHtml?`<div class="panel-section"><div class="panel-section-label">Organizations</div><div class="sh-list">${shHtml}</div></div>`:''}`;
+  document.getElementById('side-panel').classList.add('open');
+}
+function closePanel() { document.getElementById('side-panel').classList.remove('open'); currentTaskEl=null; }
+document.addEventListener('keydown', e => { if(e.key==='Escape'){ closePanel(); closeModal(); } });
+
+// ── ADD / EDIT ORG MODAL ──
+function buildModalForm(org) {
+  const swatches = document.getElementById('color-swatches');
+  swatches.innerHTML = '';
+  pickedColor = org ? org.color : PALETTE[0];
+  PALETTE.forEach((c,i) => {
+    const s = document.createElement('div');
+    s.className = 'color-swatch' + (c===pickedColor?' picked':'');
+    s.style.background = c;
+    s.onclick = () => { pickedColor = c; document.querySelectorAll('.color-swatch').forEach(x=>x.classList.remove('picked')); s.classList.add('picked'); };
+    swatches.appendChild(s);
+  });
+  const wsChecks = document.getElementById('ws-checks');
+  wsChecks.innerHTML = '';
+  WS_LIST.forEach(ws => {
+    const checked = org && org.tasks[ws.key] && org.tasks[ws.key].length > 0;
+    const tasks = org && org.tasks[ws.key] ? org.tasks[ws.key].join(', ') : '';
+    const row = document.createElement('div');
+    row.className = 'ws-check-row';
+    row.innerHTML = `<input type="checkbox" id="wc-${ws.key}" ${checked?'checked':''}><div class="ws-check-label"><label for="wc-${ws.key}">${ws.name}</label><textarea class="ws-tasks-input" id="wt-${ws.key}" placeholder="Tasks (comma-separated)">${tasks}</textarea></div>`;
+    wsChecks.appendChild(row);
+  });
+  document.getElementById('f-name').value = org ? org.name : '';
+  document.getElementById('f-full').value = org ? org.full : '';
+  document.getElementById('f-script-url').value = scriptUrl || '';
+  document.getElementById('modal-sync-status').textContent = '';
+  const notice = document.getElementById('sheets-notice');
+  notice.style.display = scriptUrl ? 'none' : 'block';
+}
+
+function openAddOrg() {
+  editingKey = null;
+  document.getElementById('modal-title').textContent = 'Add organization';
+  buildModalForm(null);
+  document.getElementById('modal-bg').classList.add('open');
+}
+function openEditOrg(key) {
+  editingKey = key;
+  const org = orgs.find(o=>o.key===key);
+  document.getElementById('modal-title').textContent = 'Edit organization';
+  buildModalForm(org);
+  document.getElementById('modal-bg').classList.add('open');
+}
+function closeModal() { document.getElementById('modal-bg').classList.remove('open'); }
+function closeModalOutside(e) { if(e.target.id==='modal-bg') closeModal(); }
+
+async function saveOrg() {
+  const name = document.getElementById('f-name').value.trim();
+  const full = document.getElementById('f-full').value.trim();
+  const url = document.getElementById('f-script-url').value.trim();
+  if (!name) { alert('Please enter an organization name.'); return; }
+  if (url) scriptUrl = url;
+
+  const ci = PALETTE.indexOf(pickedColor);
+  const light = PALETTE_LIGHT[ci>=0?ci:0];
+  const txt = PALETTE_TXT[ci>=0?ci:0];
+  const tasks = {};
+  WS_LIST.forEach(ws => {
+    const cb = document.getElementById('wc-'+ws.key);
+    const ta = document.getElementById('wt-'+ws.key);
+    if (cb && cb.checked && ta && ta.value.trim()) {
+      tasks[ws.key] = ta.value.split(',').map(t=>t.trim()).filter(Boolean);
+    }
+  });
+
+  const key = editingKey || name.toLowerCase().replace(/[^a-z0-9]/g,'').slice(0,12) + Date.now().toString(36).slice(-4);
+  const orgData = { key, name, full, color: pickedColor, light, txt, tasks };
+
+  if (editingKey) {
+    const idx = orgs.findIndex(o=>o.key===editingKey);
+    if (idx>=0) orgs[idx] = orgData;
+  } else {
+    orgs.push(orgData);
+  }
+  saveState();
+
+  if (scriptUrl) {
+    const statusEl = document.getElementById('modal-sync-status');
+    statusEl.innerHTML = '<span class="sync-dot loading"></span>Syncing to Google Sheets…';
+    try {
+      await fetch(scriptUrl, { method:'POST', mode:'no-cors', body: JSON.stringify({ action: editingKey ? 'update' : 'add', org: orgData }) });
+      statusEl.innerHTML = '<span class="sync-dot ok"></span>Synced successfully';
+    } catch(e) {
+      statusEl.innerHTML = '<span class="sync-dot err"></span>Sync failed — saved locally';
+    }
+  }
+
+  renderAll();
+  setTimeout(closeModal, scriptUrl ? 800 : 0);
+}
+
+// ── SHEETS SYNC: LOAD FROM SHEET ON START ──
+async function loadFromSheets() {
+  if (!scriptUrl) return;
+  const statusEl = document.getElementById('sync-status');
+  statusEl.innerHTML = '<span class="sync-dot loading"></span>Loading from Google Sheets…';
+  try {
+    const res = await fetch(scriptUrl + '?action=getOrgs');
+    const data = await res.json();
+    if (data && data.orgs && data.orgs.length) {
+      const baseKeys = new Set(BASE_ORGS.map(o=>o.key));
+      data.orgs.forEach(o => {
+        if (!baseKeys.has(o.key)) {
+          if (!orgs.find(x=>x.key===o.key)) orgs.push(o);
+        }
+      });
+      saveState();
+      renderAll();
+    }
+    statusEl.innerHTML = '<span class="sync-dot ok"></span>Synced with Google Sheets';
+  } catch(e) {
+    statusEl.innerHTML = '<span class="sync-dot err"></span>Using local data';
+  }
+}
+
+// ── INIT ──
+document.getElementById('last-updated-date').textContent = new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+loadState();
+renderAll();
+if (scriptUrl) loadFromSheets();
+</script>
+
+<!-- GOOGLE APPS SCRIPT SETUP GUIDE embedded as hidden section -->
+<div id="setup-guide" style="display:none">
+<!--
+GOOGLE APPS SCRIPT SETUP (one-time, ~10 minutes)
+
+1. Go to script.google.com → New project
+2. Paste this code:
+
+const SHEET_ID = 'YOUR_GOOGLE_SHEET_ID_HERE';
+
+function doGet(e) {
+  const action = e.parameter.action;
+  if (action === 'getOrgs') {
+    const ss = SpreadsheetApp.openById(SHEET_ID);
+    const sheet = ss.getSheetByName('Orgs') || ss.insertSheet('Orgs');
+    const data = sheet.getDataRange().getValues();
+    const orgs = data.slice(1).map(row => {
+      try { return JSON.parse(row[0]); } catch(e) { return null; }
+    }).filter(Boolean);
+    return ContentService.createTextOutput(JSON.stringify({orgs})).setMimeType(ContentService.MimeType.JSON);
+  }
+  return ContentService.createTextOutput(JSON.stringify({ok:true})).setMimeType(ContentService.MimeType.JSON);
+}
+
+function doPost(e) {
+  const body = JSON.parse(e.postData.contents);
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  let sheet = ss.getSheetByName('Orgs');
+  if (!sheet) { sheet = ss.insertSheet('Orgs'); sheet.appendRow(['org_json']); }
+  if (body.action === 'add') {
+    sheet.appendRow([JSON.stringify(body.org)]);
+  } else if (body.action === 'update') {
+    const data = sheet.getDataRange().getValues();
+    for (let i = 1; i < data.length; i++) {
+      try {
+        const row = JSON.parse(data[i][0]);
+        if (row.key === body.org.key) { sheet.getRange(i+1, 1).setValue(JSON.stringify(body.org)); break; }
+      } catch(e) {}
+    }
+  }
+  return ContentService.createTextOutput(JSON.stringify({ok:true})).setMimeType(ContentService.MimeType.JSON);
+}
+
+3. Deploy → New deployment → Web app
+   - Execute as: Me
+   - Who has access: Anyone
+4. Copy the deployment URL
+5. In the roadmap, add an org and paste the URL in the "Google Apps Script URL" field
+-->
+</div>
+
+
+
+</body></html>
